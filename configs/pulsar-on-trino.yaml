@@ -1,0 +1,17 @@
+image:
+  repository: "localhost:32000/trino-and-pulsar-on-k8s"
+  tag: "1.0.0"
+server:
+  workers: 3
+coordinator:
+  jvm:
+    maxHeapSize: "8G"
+worker:
+  jvm:
+    maxHeapSize: "8G"
+# additionalCatalogs:
+  pulsar: |-
+    connector.name=pulsar
+    pulsar.web-service-url=http://10.152.183.105:8080
+    pulsar.broker-binary-service-url=pulsar://10.152.183.105:6650
+    pulsar.zookeeper-uri=10.152.183.27:2181
